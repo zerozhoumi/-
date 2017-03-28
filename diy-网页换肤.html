@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #A3C5A8;
+	margin-left:30%; 
+}
+	ul{
+		list-style-type:none; 
+	}
+	#skin{
+		margin-top:15px; 
+	}
+
+	#skin li{
+		float: left;
+		width:6px;
+		height:6px;
+		cursor:pointer;
+		overflow:hidden;
+		margin-right:10px;
+		 
+		text-indent:-9999px;
+		border-width:4px;
+		border-style:solid;
+	}
+		#skin li.current{
+			background:#fff!important;
+		}
+		#red{
+			border-color: red;
+			background: red;
+		}
+		#green{
+			border-color: green;
+			background: green;
+		}
+		#black{
+			border-color: black;
+			background: black;
+		}
+	#nav{
+		margin-top:10px; 
+		
+	}
+	#nav li{
+		float: left;
+		border: 1px solid #fff;
+		padding:0 5px;
+		background: green;
+
+}
+	/*a标签 伪类学习*/
+	a{
+		font-size: 20px;
+		color: white;
+		display: block;
+		width: 100px;
+		text-align: center;
+	}
+	  
+a:link { text-decoration:none;} 
+a:active{text-decoration: underline; } 
+a:visited {text-decoration:none;} 
+a:hover { text-decoration:underline;} 
+
+</style>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+	//改变li的background；
+	//#fcf
+	//先用JQuery愉快的写个；
+	//改变skin的current
+	//让其他的current变回来的时候发现，要循环才好用
+	// $(document).ready(function(){
+	// 	$("#red").click(function(){
+	// 		$("#navul").children().css("background","red");
+	// 		$("body").css("background","#fcf");
+	// 		$("#red").addClass("current");
+	// 		$("#green").removeClass("current");
+	// 		$("#black").removeClass("current");
+	// 	});
+	// 	$("#green").click(function(){
+	// 		$("#navul").children().css("background","green");
+	// 		$("body").css("background","#A3C5A8");
+	// 		$("#green").addClass("current");
+	// 		$("#black").removeClass("current");
+	// 		$("#red").removeClass("current");
+	// 	});
+	// 	$("#black").click(function(){
+	// 		$("#navul").children().css("background","black");
+	// 		$("body").css("background","#ccc");
+	// 		$("#black").addClass("current");
+	// 		$("#red").removeClass("current");
+	// 		$("#green").removeClass("current");
+	// 	});
+	// });
+	
+$(document).ready(function(){
+
+
+	var navcolor=["red","green","black"];
+	var skincolor=["#fcf","#A3C5A8","#ccc"];
+	var skinid=$("#skinul").children();
+
+	for(var i=0;i<skinid.length;i++){
+		skinid[i].index=i;
+		//判断点击的谁
+		skinid[i].onclick=function()
+		{
+			$("body").css("background",skincolor[this.index]);
+			$("#navul").children().css("background",navcolor[this.index]);
+			// 判断增减class,current
+			for(var j=0;j<3;j++){
+				if (j!=this.index) {
+					$(skinid[j]).removeClass("current");
+				} else {
+					$(skinid[j]).addClass("current");
+				}
+			}			
+		}
+	}
+});
+//想把里面的做成函数；
+//实例用的要外链css,javascript,不好
+</script>
+<div id="skin">
+<ul id="skinul">
+	<li  id="red">红 </li>
+	<li  id="green" class="current">绿 </li>
+	<li  id="black"> 黑</li>
+</ul>
+</div>
+<br/>
+<div id="nav">
+<ul id="navul">
+	<li><a href="#">新闻</a></li>
+	<li><a href="#">娱乐</a></li>
+	<li><a href="#">体育</a></li>
+	<li><a href="#">电影</a></li>
+	<li><a href="#">音乐</a></li>
+	<li><a href="#">旅游</a></li>
+</ul>
+</div>
+
+
+</body>
+</html>
