@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>6) 记住密码提示框</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		label{
+			display: block;
+		}
+		body{
+			margin-left:40%; 
+		}
+		#box{
+			margin-top: 5px ;
+			width: 200px;
+			text-align: left;
+			border: 1px solid #f90;
+			background: #ccc;
+			display: none;
+		}
+
+	</style>
+	<script type="text/javascript">
+	
+		window.onload=function(){
+
+			var mlabel=document.getElementsByTagName("label")[0];
+			
+			var mBox=document.getElementById("box");
+			
+			mlabel.onmouseover=function(){
+				mBox.style.display="block";
+			}
+			mlabel.onmouseout=function(){
+				mBox.style.display="none";
+			}
+		}
+	</script>
+</head>
+<body>
+<label><input type="checkbox" >两周内自动登录</label>
+<div id="box">为了您的信息安全，请不要在网吧或公用电脑上使用此功能！</div>
+</body>
+</html>
