@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>6) 图片列表：鼠标移入/移出改变图片透明度</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 700px;
+			border: 1px solid black;
+			overflow:hidden;
+			padding: 10px;
+			margin: 10px 20%;
+			
+			
+		}
+		li{
+			list-style: none;
+			float: left;
+			border: 1px solid #ccc;
+			margin: 5px;
+
+		}
+		#box li img{
+			float:left;
+			opacity:0.3;
+			cursor:crosshair;
+			filter:alpha(opacity=30);
+			/*IE8以下支持*/
+		}
+		#box li.current img{
+		opacity:1;
+		filter:alpha(opacity=100);
+	}
+
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oImg=document.getElementsByTagName("li");
+			for (var i = 0; i < oImg.length; i++) {
+				oImg[i].onmouseover=function () {
+					// body...
+					this.className="current";
+				}
+				oImg[i].onmouseout=function () {
+					// body...
+					this.className="";
+				}
+			}
+			
+		}
+	</script>
+</head>
+<body>
+<div><ul id="box">
+	<li><img src="1.jpg" ></li>
+	<li><img src="2.jpg" ></li>
+	<li><img src="3.jpg" ></li>
+	<li><img src="4.jpg" ></li>
+	<li><img src="5.jpg" ></li>
+	<li><img src="6.jpg" ></li>
+	<li><img src="7.jpg" ></li>
+	<li><img src="8.jpg" ></li>
+	<li><img src="9.jpg" ></li>
+	<li><img src="10.jpg" ></li>
+	
+</ul></div>
+</body>
+</html>
