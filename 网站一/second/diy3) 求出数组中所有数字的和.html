@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3) 求出数组中所有数字的和</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#outer{
+			margin: 10px 30%;
+		}
+		#outer label input{
+			width: 220px;
+			border: 1px solid #ccc;
+			padding: 3px;
+		}
+		span{
+			color: #ccc;
+		}
+		p input{
+			margin-top:20px; 
+		}
+		.sum{
+			font-size:30px;
+			color:red;
+		}
+
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			// sum=function(arr){
+			// 	var mSum=0;
+			// 	for (var i = 0; i < arr.length; i++) {
+			// 		mSum+=arr[i];
+			// 	}
+			// 	return mSum;
+			// }
+
+			var mInput=document.getElementsByTagName("input")[0];
+			var mBtn=document.getElementsByTagName("input")[1];
+			var oSum=document.getElementsByTagName("strong")[0];
+
+			//设置输入区的类型
+			
+			mInput.onkeyup=function(){
+				this.value = this.value.replace(/[^(\d)|(,)]/,"")
+
+			}
+			
+			mBtn.onclick=function(){
+				//外置函数？sum(mInput.)无法传参；
+				
+				var sum=0;
+
+				var oInput = document.getElementsByTagName("input")[0].value.split(",");
+
+				for (var i in oInput)
+		{
+			//必须要转换
+			sum += parseInt(oInput[i]);
+		}
+		oSum.innerHTML=sum;
+
+			}
+
+			
+
+
+		}
+	</script>
+</head>
+<body>
+<div id="outer">
+    <label><input type="text" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" /><span>输入数字求和，数字之间用半角","号分隔</span></label>
+    <p><input type="button" value="求和"></p>
+    <strong class="sum"></strong>
+
+</body>
+</html>
