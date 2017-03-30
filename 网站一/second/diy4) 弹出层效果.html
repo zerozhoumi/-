@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>4) 弹出层效果</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		input{
+			margin-top:10px; 
+			cursor:pointer;
+		}
+		.box{
+			width: 400px;
+			height:200px;
+			border: 3px solid orange;
+			margin: 10% 35%;
+			display:none; 
+		}
+		
+		h2{
+			font-size:12px;
+			text-align:right;
+			background:#FC0;
+			border-bottom: 3px solid #f90;
+			padding:5px;
+		}
+
+		
+		h2 span{
+			color:#f90;
+			cursor:pointer;
+			background:#fff;
+			border:1px solid #f90;
+			padding:0 2px;
+		}
+
+	</style>
+	<script type="text/javascript">
+		window.onload=function () {
+			// body...
+			var mBtn=document.getElementsByTagName("input")[0];
+			var oClose=document.getElementById("close");
+			var mBox=document.getElementsByClassName("box")[0];
+
+			mBtn.onclick=function () {
+				// body...
+				mBox.style.display="block";
+			}
+			oClose.onclick=function () {
+				// body...
+			mBox.style.display="none";
+			}
+		}
+	</script>
+</head>
+<body>
+<center><input type="button" value="弹出层"></center>
+<div class="box">
+	<div id="top">
+	<h2><span id="close">x</span></h2>
+	</div>
+</div>
+</body>
+</html>
