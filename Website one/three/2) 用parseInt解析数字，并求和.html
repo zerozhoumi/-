@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2) 用parseInt解析数字，并求和</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			margin: 10px auto;
+		}
+		label{
+			font-size: 20px;
+			color: red;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function (argument) {
+			// body...
+		var oNum=document.getElementsByTagName("input");
+		var oSum=oNum[2];
+		var mLabel=document.getElementsByTagName("label")[0];
+
+
+		for (var i = 0; i < oNum.length-1; i++) {
+
+			oNum[i].onkeyup=function (argument) {
+			// body...
+		this.value=this.value.replace(/[^\d]/g,"");
+			}
+		}
+
+		oSum.onclick=function (argument) {
+			// body...
+			if(oNum[0].value==""||oNum[1].value==""){
+				alert("请输入数字");
+			}else
+			{
+				var sum=0;
+					sum=parseInt(oNum[0].value)+parseInt(oNum[1].value);
+					mLabel.innerHTML=sum;}
+		}
+
+}
+		
+	</script>
+</head>
+<body>
+<center>
+<input  type="text" name="">+<input type="text" name="">=<label>?</label><input type="button" value="求和">
+</center>
+</body>
+</html>
