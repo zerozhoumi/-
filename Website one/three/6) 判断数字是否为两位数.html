@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>6) 判断数字是否为两位数</title>
+	<style type="text/css">
+		center{
+			margin: 10px auto;
+		}
+		input{
+			margin: 10px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function (argument) {
+			// body...
+		var oInput=document.getElementsByTagName("input");
+		var mNum=oInput[0];
+		var oBtn=oInput[1];
+		var manyNum=function (num) {
+			
+			// body...
+			
+			var count=0;
+			for (var i = 0; num> 1; i++) {
+				num/=10;
+				count++;
+			}
+			return count;
+
+		}
+		
+		mNum.onkeyup=function(){
+			this.value=this.value.replace(/[^\d]/g,"");
+		}
+		oBtn.onclick=function (argument) {
+
+			// body...
+		if (mNum.value=="") {
+			alert("请输入数字！");
+		} else if (manyNum(mNum.value)==2) {
+			alert("是两位数");
+
+		} else{
+			alert("是"+manyNum(mNum.value)+"位数");
+		}
+	}
+		
+
+
+		}
+	</script>
+</head>
+<body>
+<center>
+<input type="text" ><input type="button" value="是否为两位数" >
+</center>
+</body>
+</html>

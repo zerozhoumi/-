@@ -40,26 +40,52 @@
 
 	</style>
 	<script type="text/javascript">
-		window.onload=function (argument) {
-			// body...
-		var oAll=document.getElementById("checkAll").getElementsByTagName("label")[0];
-		var offAll=document.getElementsByTagName("a");
+		window.onload=function (argument) {	
 		var mInput=document.getElementsByTagName("input");
-
+		var offAll=document.getElementsByTagName("a")[0];
+		var oLabel=document.getElementsByTagName("label")[0];
 		var isCheckAll=function (argument) {
-			// body...
-		for (var i = 0,n=0; i < mInput.length; i++) {
-			mInput[i].checked&&n++
-		}
-		mInput[0].checked=;
-		}
 
-		oAll.onclick=function (argument) {
-			// body...
-		
-		}
+			for (var i = 1,n=0; i < mInput.length; i++) {
+				
+			mInput[i].checked && n++	;
 
+
+			}
+				if (n == mInput.length - 1) {
+				mInput[0].checked=true ;
+
+				}
+			oLabel.innerHTML = mInput[0].checked ? "全不选" : "全选";
+
+		};
+
+		//全选---全不选
+		mInput[0].onclick=function (argument) {
+			for (var i = 1; i < mInput.length; i++) {
+				mInput[i].checked=this.checked;	
+			}
+			isCheckAll();
+		};
+		//反选
+		offAll.onclick=function (argument) {
+			
+			
+			for (var i = 1; i < mInput.length; i++) {
+				
+				mInput[i].checked=!mInput[i].checked;
+			
+			}
+			isCheckAll();
+		};
+		//根据复选框个数，更新全选状态；
+		for (var i = 1; i < mInput.length; i++) {
+			mInput[i].onclick=function (argument) {
+				
+					isCheckAll();
+			};
 		}
+	};
 	</script>
 </head>
 <body>
