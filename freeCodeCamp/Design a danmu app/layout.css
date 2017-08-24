@@ -1,23 +1,16 @@
-	#input_text {
+#input_text {
 	  width:400px;
 	  border-radius: 3px;
 	  padding:  10px;
-	}
-.s_sub{
-  width:100px;
+		margin-top: 20px;
 }
-.s_del{
-  width:100px
-}
-
-	
 	.dm {
 	  margin: 20px;
 	  text-align: center;
 	}
 	
 	.dm_screen {
-	  border: 1px solid rgb(229, 229, 229);
+	  border: 3px solid #4ff;
 	}
 	
 	.dm .dm_screen .dm_mask {

@@ -2,17 +2,11 @@
    
 	  var ref = new Wilddog("https://fcc-1.wilddogio.com");
 	  var arr = [];
-	  
+	  //把内容加入云端
 	  $(".s_sub").click(function() {
 	    var text = $("#input_text").val();
 	    ref.child('message').push(text);
 	    $("#input_text").val('');
-	  });
-	  //响应按键点击事件
-	  $("input_text").keypress(function(event) {
-	    if (event.keyCode == "13") {
-	      $(".s_sub").trigger('click');
-	    }
 	  });
 	  //响应按键清除事件
 	  $(".s_del").click(function() {
@@ -56,13 +50,13 @@
 	    }, time, function() {
 	      obj.remove();
 	    });
-	  }
+	  };
 
 	  var getRandomColor = function() {
 	    return '#' + (function(h) {
 	      return new Array(7 - h.length).join("0") + h
 	    })((Math.random() * 0x1000000 << 0).toString(16))
-	  }
+	  };
 
 	  var getAndRun = function() {
 	    if (arr.length > 0) {
@@ -70,10 +64,10 @@
 	      var textObj = $("<div>" + arr[n] + "</div>");
 	      $(".dm_show").append(textObj);
 	      moveObj(textObj);
-	    }
+	    };
 
 	    setTimeout(getAndRun, 3000);
-	  }
+	  };
 
 	  jQuery.fx.interval = 50;
 	  getAndRun();
