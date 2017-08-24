@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home's weather</title>
+</head>
+<style>
+    body{
+        width: 980px;
+        text-align: center;
+    }
+    .warp{
+        border: solid 1px #000;
+    }
+    .center{
+        display: inline-block;
+    }
+    .left{
+        width: 50%;
+        border-right: #000 1px solid;
+        float: left;
+    }
+    .right{
+        float: left;
+    }
+</style>
+<script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))</script>
+<script>tpwidget("init", {
+    "flavor": "bubble",
+    "location": "WWMKWU0KKVZP",
+    "geolocation": "enabled",
+    "position": "top-left",
+    "margin": "10px 10px",
+    "language": "zh-chs",
+    "unit": "c",
+    "theme": "chameleon",
+    "uid": "U690A3A470",
+    "hash": "226e31e03ecc18b60068dd3e47ee0827"
+});
+tpwidget("show");</script>
+<body>
+<!--这个天气应用只显示青岛与昆明-->
+<h1 class="center">家的天气</h1>
+<div id="todaytime">今天是：</div>
+<div class="warp">
+    <div class="left ">
+        <h2 class="center">昆明</h2>
+        <h3>天气：</h3>
+        <h3>温度：</h3>
+        <h3>湿度：</h3>
+    </div>
+
+    <div class="right">
+        <h2 class="center">青岛</h2>
+        <h3>天气：</h3>
+        <h3>温度：</h3>
+        <h3>湿度：</h3>
+    </div>
+</div>
+<div id="content"></div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<!--<script type="text/javascript" src="https://api.seniverse.com/v3/weather/now.json?location=beijing&ts=1443079775&uid=[U690A3A470]&sig=[your_signature]&callback=showWeather"></script>-->
+<script src="hmac-sha1.js"></script>
+<script src="test.js"></script>
+</html>
