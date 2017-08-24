@@ -72,3 +72,8 @@
 	  jQuery.fx.interval = 50;
 	  getAndRun();
 	});
+    $("#input_text").keypress(function (event) {
+        if(event.keyCode==13){
+           $(".s_sub").trigger("click");
+        }
+    });
