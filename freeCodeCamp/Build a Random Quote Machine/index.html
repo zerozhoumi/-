@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<link href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css" rel="stylesheet">
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="style.css">
 <body>
@@ -13,14 +14,16 @@
         <i class="fa fa-quote-left fa-2x"></i>
         <div class="text"></div>
         <!--作者-->
-        <div class="author text-right">--</div>
+        --<div class="author text-right"></div>
         <!--跳转链接，注意要在里面加入内容-->
-        <a class="button" id="tweet-quote" title="Tweet this quote!" target="_blank"><i class="fa fa-twitter fa-3x"></i></a>
-        <a class="button" id="weibo-quote" title="Tweet this quote!" target="_blank"><i class="fa fa-weibo fa-3x"></i></a>
-
+        <div class="social-share"></div>
         <!--换一句，手机端可以做个摇一摇啥的-->
-        <button class="button" id="new-quote">New quote</button>
+        <button class="button">New quote</button>
     </div>
+
     <footer> by <a href="https://github.com/zerozhoumi">zerozhoumi</a></footer>
 </body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/social-share.js/1.0.16/js/jquery.share.min.js"></script>
+<script src="main.js"></script>
 </html>
