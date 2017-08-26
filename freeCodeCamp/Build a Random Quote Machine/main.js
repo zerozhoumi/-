@@ -2,6 +2,7 @@ var $config = {
     title               :"test",
     sites               : ['qq', 'weibo','wechat', 'douban','twitter']// 启用的站点
 };
+
 /**
  *
  * @returns {{quote, author}|*}
@@ -9,18 +10,21 @@ var $config = {
 var getRandomquote=function(){
     //获得名言，先用数组代替
     //没有找到。。。，无法那
-    var quotes=[
-        {quote:"过去属于死神，未来属于你自己。",author:"雪莱"},
-        {quote:"志道者少友，逐利者多俦。",author:"汉·王符"},
-        {quote:"伟大的目标形成伟大的人物。",author:"埃蒙斯"},
-        {quote:"并非地球引力使人坠入爱河。",author:"爱因斯坦"},
-        {quote:"决心即力量，信心即成功。",author:"托尔斯泰"},
-        {quote:"信奉真理的人，必受天佑。",author:"富兰克林"},
-        {quote:"生命短暂，切不可猬琐偏狭。",author:"狄斯累利"},
-        {quote:"意志的力量大于手的力量。",author:"索福克勒斯"},
-        {quote:"耐心和持久胜于激烈的狂热。",author:"拉封丹"}
-    ];
-    return quotes[Math.floor(Math.random()*quotes.length)];
+    $.ajax({
+        headers: {
+            "X-Mashape-Key": "OivH71yd3tmshl9YKzFH7BTzBVRQp1RaKLajsnafgL2aPsfP9V",
+            Accept: "application/json",
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        url: 'https://andruxnet-random-famous-quotes.p.mashape.com/cat=',
+        success: function (data) {
+            if (typeof data === 'string') {
+                data = JSON.parse(data);
+            }
+            $(".text").text(data.quote);
+            $(".author").text(data.author);
+        }
+    });
 };
 /**
  *
@@ -35,23 +39,23 @@ var getRandomColor = function() {
 };
 
 //改变行为
-var changeView=function (quoteArr,color) {
-    $(".text").text(quoteArr.quote).css("color",color);
-    $(".author").text(quoteArr.author).css("color",color);
+var changeView=function (color) {
+    $(".text").css("color",color);
+    $(".author").css("color",color);
     $("body").css("background-color",color);
     $("i").css("color",color);
     $(".button").css("background-color",color);
-    //更改分享的内容
-    $config.title=quoteArr.quote+quoteArr.author;
+
 };
 
-var quoteArr=getRandomquote();
-var color=getRandomColor();
-changeView(quoteArr,color);
+getRandomquote();
+changeView(getRandomColor());
 
 $(".button").click(function(){
-    var quoteArr=getRandomquote();
-    var color=getRandomColor();
-    changeView(quoteArr,color);
+    getRandomquote();
+    changeView(getRandomColor());
 });
+
+
+$config.title= $(".textText").val();
 $('.social-share').share($config);
