@@ -1,19 +1,22 @@
 body{
     margin: 0;
     padding: 0;
+
 }
 .wrap{
     /*解决不会设置百分比高度的问题，vm解决*/
-    margin-left: 1vmin;
-    margin-top: 1vmin;
+        width: 100vmin;
+    height: 100vmin;
+    margin-left: 1%;
+    margin-top: 1%;
     display: block;
 }
 .wrap div{
     width: 31%;
-    height: 31vmin;
+    height: 31%;
     float: left;
     background-color: #ffa600;
     border-radius: 15%;
     /*如果加期来超过总宽，就会被压缩*/
-    margin: 1vmin;
+    margin: 1%;
 }

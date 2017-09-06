@@ -1,0 +1,26 @@
+body{
+	background-color: #68cdd6;
+	color: #fff;
+}
+.index-logo{
+	margin: 202px auto 0;
+	text-align: center;
+}
+.index-text{
+
+	font-size: 30px ;
+	line-height: 1.6;
+	margin:  120px 14% 0;
+
+}
+
+.bottom-logo1{
+	float: left;
+	margin-top: 174px;
+	margin-left: 120px;
+}
+.bottom-logo2{
+	margin-top: 174px;
+	float: right;
+	margin-right: 100px;
+}
