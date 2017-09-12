@@ -1,0 +1,8 @@
+{
+	"name": "testNpm"
+	,"version": "0.0.1"
+	,"main":"./idnex"
+	,"dependencies":{
+		"colors": "1.1.2"
+	}
+}
